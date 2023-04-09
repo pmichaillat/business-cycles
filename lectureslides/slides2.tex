@@ -1,0 +1,894 @@
+\documentclass[11pt,aspectratio=169,xcolor={dvipsnames},hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation,lecture,math}
+\hypersetup{pdftitle={Slackish Business-Cycle Model: Static Version}}
+\newcommand{\npdf}{../figures/figures2.pdf}
+\newcommand{\wpdf}{../figures/widefigures2.pdf}
+\begin{document}
+
+\title{Slackish Business-Cycle Model: Static Version}
+\information{Pascal Michaillat}%
+{December 2023}%
+{https://pascalmichaillat.org/z/}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Outline}
+\begin{itemize}
+\item Present a slackish model of business cycles
+\begin{itemize}
+\item Static version
+\item Based on \href{https://pascalmichaillat.org/3/}{Michaillat, Saez (2015)}
+\end{itemize}
+\item Solve the model
+\item Study impact of aggregate demand and supply shocks
+\item Compare predictions of different price norms
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Key modeling assumptions}
+\begin{itemize}
+	\item Static model \then comparative statics
+	\item All workers are self-employed \then only one market
+	\item All trade mediated by matching function \then slack
+	\item Wealth in the utility function \then nondegenerate aggregate demand
+	\item Unequal income and wealth \then inequality and theoretical clarity (different aggregate and individual variables)
+	\item Prices determined by rigid price norm \then realism \& simplicity
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\heading{Matching market and matching function}
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching market}
+\begin{itemize}
+\item $S$ sellers and $B$ buyers exchanging a type of good
+\item Trading process is complex:
+\begin{itemize}
+	\item All goods are somewhat different
+	\item All buyers have different preferences
+	\item Marketplace is not centralized
+\end{itemize}
+\item Number of trades determines by \al{matching function} (less than $S$ and $B$)
+\item Price are determined by \al{price norm} in bilateral-monopoly situations
+\item In practice, almost all markets are matching markets:
+\begin{itemize}
+	\item Labor market
+	\item Market for services and many goods
+\end{itemize}
+ \item Auction markets are the exception (stock market, commodity markets)
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching function (Petrongolo, Pissarides 2001)}
+\begin{itemize}
+\item The matching function $m$ is an aggregate function that summarizes a complex process that occurs on most markets
+\begin{itemize}
+	\item Just like a production function is an aggregate function that summarizes a complex production process
+\end{itemize}
+\item In markets with one good per person: $M = m(S,B)$
+\begin{itemize}
+	\item $M$: number of trades (labor market example: hires)
+	\item $S$: number of sellers (labor market example: jobseekers)
+	\item $B$: number of buyers (labor market example: vacancies)
+	\item With $m(S,B) \leq \min{S,B}$
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of matching function (Petrongolo, Pissarides 2001)}
+\begin{itemize}
+\item Need some buyers and sellers for trades
+\begin{equation*}
+	m(0,B) = m(S,0) = 0
+\end{equation*}
+\item More sellers or buyers lead to more trades
+\begin{equation*}
+\pd{m}{S}>0 \quad\text{and}\quad \pd{m}{B}>0
+\end{equation*}
+\item Constant returns to scale (for tractability, and realistic)
+\begin{equation*}
+m(\l \cdot S, \l \cdot B) = \l\cdot m(S,B)
+\end{equation*}
+\item Concavity in both arguments: $\partial^2 m/\partial S^2<0$ and  $\partial^2 m/\partial B^2<0$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Market tightness}
+\begin{itemize}
+\item Market tightness is a key aggregate variable on any matching market
+\item Market tightness is as important as the price (in some ways more important)
+\item Market tightness is the ratio of buyers to sellers: $\t = B/S$ 
+\begin{itemize}
+	\item  Labor market example: $\t = $ vacancies / jobseekers
+\end{itemize}
+\item Tightness is so important because it determines all trading probabilities:
+\begin{itemize}
+	\item Probability to sell a good
+	\item Probability to buy a good
+	\item (Which are assumed to be 100\% in competitive markets)
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Selling probability}
+\begin{equation*}
+f(\t) = \frac{M}{S} = \frac{m(S,B)}{S} = m\of{\frac{S}{S},\frac{B}{S}} = m(1,\t)
+\end{equation*}
+\begin{itemize}
+\item Selling probability only depends on tightness
+\item No chance of selling without buyers: $f(0) =0$
+\item Selling probability is increasing in tightness: $f'(\t)>0$
+\begin{itemize}
+	\item Tight markets are favorable to sellers
+	\item When there are a lot of buyers relative to sellers, it is easy to sell
+\end{itemize}
+\item Selling probability is concave in tightness: $f''(\t)<0$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Buying probability}
+\begin{equation*}
+q(\t) = \frac{M}{B} = \frac{m(S,B)}{B} = m\of{\frac{S}{B},\frac{B}{B}} = m\of{\frac{1}{\t},1}
+\end{equation*}
+\begin{itemize}
+\item Buying probability only depends on tightness
+\item No chance of buying without sellers: $q(\infty) = 0$
+\item Buying probability is decreasing in tightness: $q'(\t)<0$
+\begin{itemize}
+	\item Tight markets are unfavorable to buyers
+	\item When there are a lot of buyers relative to buyers, it is difficult to buy
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Relationship between selling and buying probabilities}
+\begin{equation*}
+f(\t) = m(1,\t) = \t \cdot m\of{\frac{1}{\t},1} = \t \cdot q(\t)
+\end{equation*}
+\begin{itemize}
+\item Result obtained by constant returns to scale
+\item Means that $f(\t) = \t \cdot q(\t)$
+\item Also means that $\t = f(\t)/q(\t)$ 
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Cobb-Douglas matching function}
+\vspace*{-7mm}\begin{equation*}
+m(S,B) = \o \cdot S^\h \cdot B^{1-\h}
+\end{equation*}\vspace*{-7mm}
+\begin{itemize}
+\item $\o$: matching efficacy 
+\item $\h$: matching elasticity
+\item $f(\t) = m(1,\t) = \o \cdot \t^{1-\h}$ with $\t = B/S$
+\item $q(\t) = m(1/\t,1) = \o \cdot \t^{-\h}$ with $\t = B/S$
+\item Realistic matching function on the labor market (Petrongolo, Pissarides 2001)
+\begin{itemize}
+	\item $\h \in [0.5,0.7]$, commonly calibrated to $\h = 0.5$
+\end{itemize}
+\item Works well in continuous time, where $m(S,B)$ gives a matching rate
+\item But inconvenient in discrete-time matching models
+\begin{itemize}
+	\item Requires to add the constraint $m(S,B) \leq \min{S,B}$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Constant-elasticity-of-substitution (CES) matching function}
+\vspace*{-7mm}\begin{equation*}
+m(S,B) = \bs{S^{-\g} + B^{-\g}}^{-1/\g}
+\end{equation*}\vspace*{-7mm}
+\begin{itemize}
+\item $\g>0$: governs the elasticity of substitution 
+\item $f(\t) = m(1,\t) = \bs{1 + \t^{-\g}}^{-1/\g}$ with $\t = B/S$
+\item $q(\t) = m(1/\t,1) = \bs{1+ \t^{\g}}^{-1/\g}$ with $\t = B/S$
+\item Convenient matching function in discrete-time models
+\begin{itemize}
+	\item Always satisfies $m(S,B)<\min{S,B}$
+\end{itemize}
+\item But not realistic empirically as it implies highly nonconstant matching elasticity
+\begin{equation*}
+\h(\t) = \pe{m}{S} = \frac{1}{1 + \t^{-\g}}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Description of the model}
+\end{frame}
+
+\begin{frame}
+\frametitle{Structure}
+\begin{itemize}
+\item Static, one-period model
+\item Households are self-employed and produce services
+\begin{itemize}
+	\item No firms, so no distinct labor and product markets
+	\item Only one market for services 
+\end{itemize}
+\item Households purchases and consume services produced by other households
+\item All services are traded on a matching market 
+\begin{itemize}
+	\item Trades mediated by a CES matching function
+\end{itemize}
+\item Households are endowed with wealth
+\begin{itemize}
+	\item Used as numeraire
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Most employment produces services}
+\includegraphics<1>[scale=\wfig,page=1]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Wealth inequality}
+\begin{itemize}
+\item Each household $i\in[0,1]$ starts with endowment of wealth $\m_i$
+\item Aggregate wealth: $\m = \sum \m_i$
+\item Wealth may be money, land, gold, art
+\begin{itemize}
+	\item Any good that is nonproduced and valuable
+\end{itemize}
+\item Wealth is used as numeraire
+\begin{itemize}
+	\item All prices are expressed in units of wealth
+\end{itemize}
+\item Introducing wealth is key to obtain a nondegenerate aggregate demand
+\begin{itemize}
+	\item Households must choose between consumption and something else
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Inequality in productive capacity}
+\begin{itemize}
+\item Each household $i\in[0,1]$ offers $k_i$ services to the market:
+\begin{itemize}
+	\item Reflects inequality in human capital, productive capital, taste for work and leisure
+	\item Produces income inequality
+\end{itemize}
+\item Aggregate capacity: $k = \sum k_i$
+\item Capacity is fixed, reflecting the capacity is acyclical in the data:
+\begin{itemize}
+	\item Acyclical technology
+	\item Acyclical capital stock
+	\item Acyclical labor-force participation
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Household utility function}
+\vspace*{-7mm}\begin{equation*}
+\Uc\of{c_i, \frac{m_i}{p}} = \frac{\c}{1 + \c} c_{i}^{\frac{\e - 1}{\e}} + \frac{1}{1 + \c}\bp{\frac{m_i}{p}}^{\frac{\e - 1}{\e}}
+\end{equation*}\vspace*{-7mm}
+\begin{itemize}
+\item Household $i$ consumes $c_i$ services
+\item Household $i$ holds $m_i/p$ units of real wealth
+\begin{itemize}
+	\item $m_i$: nominal wealth holdings
+	\item $p$: aggregate price level
+	\item $m = \sum m_i$: aggregate nominal wealth holdings
+\end{itemize}
+\item $\c>0$: taste for services relative to wealth 
+\item $\e>1$: elasticity of substitution between consumption and wealth
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Justification for wealth in utility function}
+\begin{itemize}
+\item People enjoy accumulating wealth in itself, not for future consumption:\vspace*{2mm}
+\begin{quote}
+The duty of saving became nine-tenths of virtue and the growth of the cake the object of true religion\ldots Saving was for old age or for your children; but this was only in theory---the virtue of the cake was that it was never to be consumed, neither by you nor by your children after you. (Keynes 1919)
+\end{quote}\vspace*{-2mm}
+\item Many reasons why people enjoy wealth, including social status and power:\vspace*{2mm}
+\begin{quote}
+A man may include in the benefits of his wealth\ldots the social standing he thinks it gives him, or political power and influence, or the mere miserly sense of possession, or the satisfaction in the mere process of further accumulation. (Fisher 1930)
+\end{quote}\vspace*{-2mm}
+\item Neuroscientific evidence: wealth itself provides utility (Camerer, Loewenstein, Prelec 2005)
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching process}
+\begin{itemize}
+\item Household $i$ visits $v_i$ shops to buy services from other households
+\item Household $i$ offers $k_i$ services for sale
+\item Matching function determines number of services sold and purchased:
+\begin{equation*}
+y = m\of{\sum k_i, \sum v_i}
+\end{equation*}\vspace*{-5mm}
+\begin{itemize}
+	\item $y$: output
+	\item $k = \sum k_i$: aggregate capacity
+	\item $v = \sum v_i$: aggregate number of visits
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Market tightness and trading probabilities}
+\begin{itemize}
+\item Market tightness:
+\begin{equation*}
+x = \frac{\sum v_i}{\sum k_i} = \frac{v}{k}
+\end{equation*}
+\item Probability to sell one service: $f(x) = m(1,x)$
+\item Services sold by household $i$: $f(x) k_i$
+\item Probability to buy a service in a visit: $q(x) = m(1/x,1)$
+\item Services purchased by household $i$: $q(x) v_i$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Shopping cost}
+\begin{itemize}
+\item Each visit requires $\k\in(0,1)$ services
+\item Service purchased $>$ services consumed
+\begin{itemize}
+	\item Additional purchased services used for shopping
+\end{itemize}
+\item Why do we need to introduce a cost of shopping?
+\begin{itemize}
+	\item Theoretical symmetry: it's costly for sellers to spend their day in the shop waiting for customers, so on both sides of the market finding a trading partner is costly
+	\item Provides an interior solution to welfare problem
+	\item Sellers and buyers are both generally happy to trade, indicating that they derive a surplus from trading and thus that there are costs
+	\item Realism: it's costly to shop for sellers (time, effort, middlemen, brokers)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Shopping wedge: gap between purchases and consumption}
+\begin{itemize}
+\item Household conducts $v$ visits to consume $c$ services
+\item This requires to purchase $c + \k v$ services
+\item One visit yields $q(x)$ services, so 1 purchase requires $1/q(x)$ visits, and so the household's visits satisfy:
+\begin{align*}
+v = \frac{c}{q(x)} + \k\frac{v}{q(x)}\\
+v \bp{1- \frac{\k}{q(x)}} = \frac{c}{q(x)}\\
+v \bp{q(x)- \k} = c\\
+\k v = c \frac{\k}{q(x)-\k}
+\end{align*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of the shopping wedge}
+\begin{itemize}
+\item $\k v = c \k/ [q(x)-\k]$ is the number of services required to shop for $c$ services consumed. The shopping wedge is the number of shopping services required for or one service consumed:
+\begin{equation*}
+\tau(x) = \frac{\k}{q(x)-\k}
+\end{equation*}
+\item Consuming 1 service requires to purchase $1 + \tau(x)$ services
+\begin{itemize}
+	\item Akin to a firm employing human-resource workers to hire producers
+\end{itemize}
+\item $\tau(0)=\k/(1-\k)$, $\tau'(x)>0$, $\tau(x)\to \infty$ at $x = x_{\tau}$, where $q(x_{\tau}) = \k$
+\begin{itemize}
+	\item Recall that $q(x) = \bs{1+ x^{\g}}^{-1/\g}$ with $\g>0$
+	\item In a tighter market, visits are less likely to be successful, so households devote more resources to shopping \then larger shopping wedge
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Price norm}
+\begin{itemize}
+\item Buyers and sellers are happy to trade:
+\begin{itemize}
+	\item If a seller does not sell her service, she remains idle
+	\item If a buyer does not buy the service, she has to incur the shopping cost again
+	\item So both buyers and sellers enjoy surplus from trade
+\end{itemize}
+\item[\then] Prices are determined in situation of bilateral monopoly 
+\item[\then] Price $p$ is determined by price norm
+\item[\then] Price norm is a custom about how to share surplus fairly
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Household problem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Statement of the problem}
+\begin{itemize}
+\item Choose $c_i$, $m_i$ to maximize utility function:
+\begin{equation*}
+\Uc\of{c_i, \frac{m_i}{p}} = \frac{\c}{1 + \c} c_{i}^{\frac{\e - 1}{\e}} + \frac{1}{1 + \c}\bp{\frac{m_i}{p}}^{\frac{\e - 1}{\e}}
+\end{equation*}
+\item Subject to budget constraint:
+\begin{equation*}
+p\cdot \al{[1+\tau(x)]} \cdot c_{i} + m_{i} = p \cdot \al{f(x)} \cdot k_{i} + \m_{i}
+\end{equation*}
+\item Taking as given market tightness, $x$, and price of services, $p$
+\item Key novelties of slackish model:
+\begin{itemize}
+\item Selling probability $f(x)<1$: difficulty in finding buyers
+\item Shopping wedge $\tau(x)>0$: difficulty in finding sellers
+\item Smooth functions of tightness instead of kinky regimes in Barro, Grossman (1971)
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Substitute budget constraint into utility: 
+\begin{equation*}
+\max_{c_{i}} \frac{\c}{1 + \c}c_{i}^{\frac{\e - 1}{\e}} + \frac{1}{1 + \c}\bs{f(x) \cdot k_i + \frac{\m_i}{p} - [1+\tau(x)] c_i}^{\frac{\e - 1}{\e}}
+\end{equation*}
+\item This is a concave maximization problem. The first-order condition gives a necessary and sufficient condition to find the global maximum of the problem:
+\begin{align*}
+\frac{\e - 1}{\e} \cdot \frac{\c}{1 + \c}\cdot c_i^{-1/\e} &= \frac{1}{1 + \c}\cdot\frac{\e - 1}{\e} \bs{1+\tau(x)} \bs{f(x) \cdot k_i + \frac{\m_i}{p} - [1+\tau(x)] c_i }^{- 1/\e}\\
+c_i &= \bs{\frac{\c}{1 + \tau(x)}}^{\e} \bs{f(x)\cdot k_i + \frac{\m_i}{p} - [1+\tau(x)] c_i}\\
+\bs{1 + \c^{\e}[1+\tau(x)]^{1 - \e}} c_i &= \c^{\e}[1+\tau(x)]^{-\e} \bs{f(x)\cdot k_i + \frac{\m_i}{p}}\\
+c_i &= \frac{\c^{\e}[1+\tau(x)]^{-\e}}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}\bs{f(x)\cdot k_i + \frac{\m _i}{p}}.
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal purchases of services}
+\begin{itemize}
+\item Number of services that the household will actually purchase:
+\begin{equation*}
+y_i = [1+\tau(x)] c_i = \frac{\c^{\e} [1+\tau(x)]^{1 - \e}}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}\bs{f(x)\cdot k_i + \frac{\m_i}{p}}
+\end{equation*}
+\item So household $i$ spends a fraction $\f(x) \in (0,1)$ of initial real wealth + real income on services:
+\begin{align*}
+y_i &= \f(x)\bs{f(x)\cdot k_i + \frac{\m_i}{p}}\\
+\f(x) &= \frac{\c^{\e} [1+\tau(x)]^{1 - \e}}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}
+\end{align*}
+\item Household $i$ saves a fraction $1-\f(x) \in (0,1)$ of initial real wealth + real income:
+\begin{equation*}
+\frac{m_i}{p} = f(x)\cdot k_i + \frac{\m_i}{p} - y_i = [1-\f(x)]\bs{f(x)\cdot k_i + \frac{\m_i}{p}}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Marginal propensity to spend}
+\vspace*{-5mm}\begin{equation*}
+\f(x) =  \frac{\c^{\e} [1+\tau(x)]^{1 - \e}}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}
+\end{equation*}\vspace*{-5mm}
+\begin{itemize}
+\item $\f(x)\in (0,1)$: marginal propensity to spend out of total, post-income wealth
+\item $1-\f(x)\in (0,1)$: marginal propensity to save out of total, post-income wealth
+\item $\f(x)$ is decreasing in $x$: marginal propensity to spend is lower in a tight economy
+\begin{itemize}
+	\item Because $\tau(x)$ is increasing in $x$
+	\item And $\e>1$ so $1-\e<0$
+	\item And $z \mapsto z/(1+z)$ is increasing in z
+\end{itemize}
+\item In tight economy, buying becomes more complicated as visits are less likely to be successful and a larger share of spending is devoted to shopping \then spending is less appealing
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary of household's behavior}
+\begin{itemize}
+\item Spending: $y_i = \f(x) \bs{f(x)\cdot k_i + \m_i/p}$
+\item Saving: $m_i/p = [1-\f(x)] \bs{f(x)\cdot k_i + \m_i/p}$
+\item Consumption of services: $c_i = y_i/[1+\tau(x)]$
+\item Shopping visits: $v_i = y_i/q(x)$
+\item Shopping services: $\k v_i = y_i - c_i = \tau(x) c_i$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Aggregate supply}
+\end{frame}
+
+\begin{frame}
+\frametitle{Constructing the AS curve}
+\begin{itemize}
+\item Household $i$ sells $y_i = f(x) k_i$
+\item All households sell $y = \sum y_i = f(x) \sum k_i = f(x) k$
+\item AS curve gives the number of services sold at tightness $x$:
+\begin{equation*}
+y^s(x) = f(x) \cdot k
+\end{equation*}
+\item AS curve has the same properties as the selling probability $f(x)$:
+\begin{itemize}
+\item No sales without buyers: $y^s(0) = 0$
+\item More sales in tighter markets: $\odx{y^s}{x}>0$
+\item AS curve is concave: $d^2 y^s/dx^2 < 0$
+\item All capacity is used with infinitely many buyers: $\lim_{x\to \infty} y^s(x) = k$
+\item Recall that $f(x) = \bs{1+ x^{-\g}}^{-1/\g}$ with $\g>0$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Plotting the AS curve}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=1]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Market diagram features tightness $x$ on y-axis, not price $p$
+	\item Tightness $x$ is the central variable of the model:
+	\begin{itemize}
+	\item Tightness determines all other variables
+	\item Tightness responds to shocks, not prices
+	\end{itemize}
+\end{itemize}
+\end{column}  
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\heading{Aggregate demand}
+\end{frame}
+
+\begin{frame}
+\frametitle{Aggregating households' purchases}
+\begin{itemize}
+\item Household $i$ purchases $y_i = \f(x) [f(x) k_i + \m_i/p]$
+\item All households purchase:
+\begin{equation*}
+ y = \sum y_i = \f(x) \bs{ f(x) \bp{\sum k_i} + \bp{\sum \m_i}/p} = \f(x) \bs{ f(x) k + \m/p}
+\end{equation*}
+\item Aggregate quantity of services demanded:
+\begin{equation*}
+y = \f(x) \bs{y^s(x) + \m/p}
+\end{equation*}
+\item Deviation from Say's Law because $\f(x)<1$ \then supply creates less than its own demand
+\item Nondegenerate aggregate demand because $\f<1$, so because $\c<\infty$
+\begin{itemize}
+\item Because people value not only consumption but also wealth
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Constructing the AD curve using a Keynesian cross}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=2]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item In the aggregate, income = spending = real output = $y$
+	\item Income given by matching process: $y = y^s(x)$
+	\item Spending chosen by households: $y = \f(x) \bs{y^s(x) + \m/p}$
+	\item AD curve is aggregate spending chosen by households given that aggregate income = aggregate spending
+\end{itemize}
+\end{column}  
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Expression for the AD curve}
+\begin{itemize}
+\item AD curve is given by:
+\begin{equation*}
+y^d(x) = \frac{\f(x)}{1-\f(x)}\cdot \frac{\m}{p}
+\end{equation*}
+\item But the marginal propensity to spend satisfies:
+\begin{align*}
+\f(x) &=  \frac{\c^{\e} [1+\tau(x)]^{1 - \e}}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}\\
+1-\f(x) &=  \frac{1}{1 + \c^{\e}[1+\tau(x)]^{1 - \e}}\\
+\frac{\f(x)}{1-\f(x)} & = \c^{\e} [1+\tau(x)]^{1 - \e} = \frac{ \c^{\e}}{[1+\tau(x)]^{\e-1}}
+\end{align*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of the AD curve}
+\vspace*{-5mm}\begin{equation*}
+y^d(x) = \frac{\c^{\e}}{[1+\tau(x)]^{\e-1}}\cdot \frac{\m}{p}.
+\end{equation*}\vspace*{-5mm}
+\begin{itemize}
+\item $\c$: preference for consumption over saving
+\item $\tau(x)$: cost of shopping, from congestion
+\item $\m/p$: aggregate real wealth
+\item No spending in very tight economy: $y^d(x_{\tau}) = 0$, because $\tau(x_{\tau}) =0$
+\item Less spending in tighter economy: $y^d(x)$ is decreasing in $x$
+\begin{itemize}
+\item because $\tau(x)$ is increasing in $x$, and $\e>1$
+\end{itemize}
+\item Maximum spending at $0$ tightness: $y^d(0) = \c^{\e} (1-\k)^{\e-1}(\m/p)$, because $\tau(0)=\k/(1-\k)$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Plotting the AD curve}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=3]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Market diagram features tightness $x$ on y-axis, not price $p$
+	\item But AD curve is also downward sloping in quantity-price diagram
+	\item Same AD concept as IS curve in IS-LM \then microfoundation for IS
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\heading{Solution of the model}
+\end{frame}
+
+\begin{frame}
+\frametitle{Two key relationships}
+\begin{itemize}
+\item Output = real income is given by the matching function:
+\begin{equation*}
+y = y^s(x)
+\end{equation*}
+\item Output = real spending is given by households' utility-maximizing decisions:
+\begin{equation*}
+y = \f(x)\bs{ y^s(x) + \frac{\m}{p}}
+\end{equation*}
+\item System of two equations and two variables: $y$, $x$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Rewriting the system with AS and AD curves}
+\begin{itemize}
+\item If we substitute the first equation into the second one, we obtain:
+\begin{align*}
+\left\lbrace\begin{array}{ccc}
+y & = & y^s(x)\\
+y & = &  \f(x)\bs{y + \frac{\m}{p}}
+\end{array}\right.
+\end{align*}
+\item This just gives the following system:
+\begin{align*}
+\left\lbrace\begin{array}{ccc}
+y & = & y^s(x)\\
+y & = &  \frac{\f(x)}{1-\f(x)}\cdot \frac{\m}{p}
+\end{array}\right.
+\end{align*}
+\item Which we can re-express with AS and AD curves:
+\begin{align*}
+\left\lbrace\begin{array}{ccc}
+y & = & y^s(x)\\
+y & = & y^d(x)
+\end{array}\right.
+\end{align*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution of the model}
+\begin{itemize}
+\item Tightness $x$ that solves the model is given by:
+\begin{equation*}
+y^s(x) = y^d(x)
+\end{equation*}
+\item Then output can be read from the AS or AD curves
+\item $y^s(x)$ is increasing from $0$ to $k$ as $x$ is increasing from 0 to $\infty$
+\item $y^d(x)$ is decreasing from $ \c^{\e} (1-\k)^{\e-1} (\m/p)$  to $0$ as $x$ is increasing from 0 to $x_{\tau}$
+\item[\then] Model always admits a unique solution, $x \in (0,x_{\tau})$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Graphical representation of the solution}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=4]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Market diagram features tightness $x$ on y-axis, not price $p$
+	\item Intersection of AD and AS curves gives $y$, $x$ that solve the model
+	\item All other variables can be computed from $x$
+	\item Model all features slack $= 1-f(x)$ 
+	\item Slack is share of idle capacity
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Computing aggregate variables from tightness}
+\begin{itemize}
+\item Aggregate output: $y = y^s(x) = y^d(x)$
+\item Aggregate consumption: $c = y/[1+\tau(x)]$
+\item Rate of slack = rate of idleness = $1-f(x)$
+\item Aggregate wealth holdings: $m = \m$ (Walras's Law)
+\item Aggregate shopping visits: $v = y/q(x)$
+\item Price $p$ is given by price norm, which could depend on $x$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Computing individual variables from tightness}
+\begin{itemize}
+\item Individual real income: $f(x) k_i$
+\item Individual real spending: $y_i = \f(x) [f(x) k_i + \m_i/p]$
+\item Individual rate of idleness: $1-f(x)$
+\item Individual wealth holdings: $m_i/p = [1-\f(x)] [f(x) k_i + \m_i/p]$
+\item Individual shopping visits: $v_i = y_i/q(x)$
+\item Individual consumption: $c_i = y_i/[1+\tau(x)]$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{How much rationality does the model assume?}
+\begin{itemize}
+\item Households maximize utility subject to budget constraint \then do the best they can given their income and wealth
+\item Households anticipate the price of services \then reasonable since prices are given by price norms which are by definition well understood
+\begin{itemize}
+	\item Realized prices can differ from the norm as long as they remain within the bargaining set, and that such deviations are unanticipated
+\end{itemize}
+\item Households anticipate the market tightness \then this is difficult, but tightness might be announced by a statistical agency whose goal is to make correct predictions
+\begin{itemize}
+\item The only announced tightness that can be realized is the model solution
+\item See \href{https://youtu.be/2VR6BtXVPCU}{lecture video} for more details
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Comparative statics with fixed prices}
+\end{frame}
+
+\begin{frame}
+\frametitle{AS shocks}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=5]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item $y^s(x) = f(x) k$
+	\item Change in capacity $k$: labor force participation, immigration
+	\item Negative correlation between output and tightness
+	\item Movement along the AD curve
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of negative AS shock}
+\begin{itemize}
+\item Consider a negative AS shock: capacity $k$ \down
+\item Tightness $x$ \up
+\item Output $y$ \down
+\item Slack/idleness $1-f(x)$ \down
+\item Buying probability $q(x)$ \down, and shopping wedge $\tau(x)$ \up
+\item Selling probability $f(x)$ \up (also measured productivity \down)
+\item Consumption $c = y/[1+\tau(x)]$ \down
+\item Negative AS shock reduces output and makes it harder to buy goods:
+\begin{itemize}
+ \item Describes the lockdown period of the pandemic well
+ \item But rare in general since slack and output comove negatively (Okun's law)
+ \end{itemize}
+\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{AD shocks}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=6]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item $y^d(x) = \c^{\e}(\m/p) [1+\tau(x)]^{1-\e}$
+	\item Change in desire to consume $\c$ or wealth endowment $\m$
+	\item Positive correlation between output and tightness
+	\item Movement along the AS curve
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of negative AD shock}
+\begin{itemize}
+\item Consider a negative AD shock: desire to consume $\c$ \down or wealth endowment $\m$ \down
+\item Tightness $x$ \down
+\item Output $y$ \down
+\item Slack/idleness $1-f(x)$ \up
+\item Buying probability $q(x)$ \up, and shopping wedge $\tau(x)$ \down
+\item Selling probability $f(x)$ \down (also measured productivity \down)
+\item Negative AD shock reduces output and makes it harder to sell goods:
+\begin{itemize}
+ \item Most common shock since slack and output comove negatively (Okun's law)
+ \end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Generalization to rigid prices}
+\end{frame}
+
+\begin{frame}
+\frametitle{Breaking down the comparative statics}
+\begin{itemize}
+\item Tightness is given by $y^s(x) = y^d(x,p)$:
+\begin{equation*}
+f(x) k = \c^{\e} [1+\tau(x)]^{1-\e} \frac{\m}{p}
+\end{equation*}
+\item Collect all tightness terms to isolate the source of comparative statics:
+\begin{equation*}
+f(x)  [1+\tau(x)]^{\e-1}= \frac{\c^{\e} \m}{k}\cdot \frac{1}{p} 
+\end{equation*}
+\item Left-hand side is strictly increasing from $0$ to $\infty$ when $x$ increases from $0$ to $x_{\tau}$ \then equation admits a unique solution (the solution of the model)
+\item What determines the response of tightness is the block:
+\begin{equation*}
+\frac{\c^{\e} \m}{k}\cdot \frac{1}{p}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Illustration of comparative statics}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=7]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item The intersection of the two curves is the model solution
+	\item The term $(\c^{\e} \m)/(kp)$ varies in comparative statics
+	\item Any price norm $p$ that does not completely absorb variations in $(\c^{\e} \m)/k$ yields the same results
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Rigid price norm}
+\begin{itemize}
+\item The comparative-static results remain the same when the price is not fixed but partially rigid:
+\begin{equation*}
+p = p_0 \cdot \bs{\frac{\c^{\e} \m}{k}}^{1-\r}
+\end{equation*}
+\item $p_0 >0$ governs the price level
+\item $\r\in(0,1)$ governs the rigidity of prices:
+\begin{itemize}
+ 	\item $\r=0$: flexible price (surplus-sharing price as special case)
+ 	\item $\r=1$: fixed price
+ \end{itemize} 
+ \item $\c$, $\m$: AD parameters, tend to raise price
+ \item $k$: AS parameter, tend to lower price
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparative statics with partially rigid prices}
+\begin{itemize}
+\item The $y^s(x) = y^d(x,p)$ equation becomes:
+\begin{equation*}
+f(x)  [1+\tau(x)]^{\e-1}= \bs{\frac{\c^{\e} \m}{k}}^{\r}\cdot \frac{1}{p_0} 
+\end{equation*}
+\item Same implicit definition of $x$ except for exponent $\r>0$
+\item Since $\r>0$, the right-hand side moves in the same direction as with fixed price
+\item All comparative statics remain the same
+\item But size of effects are attenuated \then elasticity of $x$ with respect to $\c$, $\m$, $k$ is $\r$ the elasticity under fixed price
+\begin{itemize}
+\item[\then] Effects vanish as price becomes flexible ($\r\to 0$) 
+\end{itemize}
+\item There is nothing special about fixed prices \then flexible prices are special
+\end{itemize}	
+\end{frame}
+
+\end{document}

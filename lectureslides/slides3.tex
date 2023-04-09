@@ -1,0 +1,781 @@
+\documentclass[11pt,aspectratio=169,xcolor={dvipsnames},hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation,lecture,math}
+\hypersetup{pdftitle={Slackish Business-Cycle Model: Dynamic Version}}
+\newcommand{\npdf}{../figures/figures3.pdf}
+\newcommand{\wpdf}{../figures/widefigures3.pdf}
+\begin{document}
+
+\title{Slackish Business-Cycle Model: Dynamic Version}
+\information{Pascal Michaillat}%
+{December 2023}%
+{https://pascalmichaillat.org/z/}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Outline}
+\begin{itemize}
+\item Present a slackish model of business cycles
+\begin{itemize}
+\item Dynamic version
+\item Based on \href{https://pascalmichaillat.org/7/}{Michaillat, Saez (2022)}
+\end{itemize}	
+\item Solve the model
+\item Study impact of aggregate demand and supply shocks
+\item Study impact of monetary policy
+\begin{itemize}
+\item Contrast normal times and zero lower bound (ZLB)
+\item Review evidence on effectiveness of monetary policy
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Structure of the model}
+\begin{itemize}
+\item \al{Dynamic, continuous-time} model
+\item Measure 1 of \al{identical} households are self-employed and produce services
+\begin{itemize}
+	\item No firms, and only one market for services markets
+\end{itemize}
+\item Households purchases and consume services produced by other households
+\item All services are traded on a matching market 
+\begin{itemize}
+	\item Trades are mediated by a \al{Cobb-Douglas} matching function
+\end{itemize}
+\item Government issues bonds, sets taxes, and sets \al{nominal interest rate through central bank}
+\item Households save with \al{government bonds}, and they derive utility not only from consumption but also from their \al{relative wealth}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Aggregate supply}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supply of services}
+\begin{itemize}
+\item Size of the labor force is $l>0$
+\item Each worker has the capacity to produce $a>0$ services per unit time
+\item Services are sold through long-term worker-household relationships
+\begin{itemize}
+\item After matching, a worker becomes a full-time employee of the household
+\end{itemize}
+\item Employees lose their jobs at rate $\l>0$
+\item Services are sold at a unit price $p(t)$ 
+\begin{itemize}
+\item Worker's income is $a p(t)$
+\item Inflation rate is $\pi(t)= \dot{p}(t)/p(t)$
+\end{itemize}
+\item Aggregate capacity = $a l$: amount of services produced if all the labor force was employed
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Job separation rate $\approx$ acyclical}
+\includegraphics<1>[scale=\wfig,page=8]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Capacity and unemployment}
+\begin{itemize}
+\item Because of the matching function, not all jobseekers find a job 
+\begin{itemize}
+\item[\then] There is always some unemployment
+\end{itemize}
+\item Unemployment rate $u(t)$ = share of workers in the labor force who are not employed by any households
+\item Number of employed workers:
+\vspace*{-2mm}\begin{equation*}
+n(t) = [1-u(t)] l,
+\end{equation*}
+\item Aggregate output of services:
+\vspace*{-2mm}\begin{equation*}
+y(t) = a n(t) =  [1- u(t)] a l
+\end{equation*}
+\item Output $y(t) <$ capacity $a l$ because some workers are unemployed
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching function}
+\begin{itemize}
+\item Households advertise $v(t)$ vacancies
+\item $l - n(t) = u(t) l$ workers are unemployed
+\item Cobb-Douglas matching function determines the number of new employment relationships per unit time: 
+\vspace*{-2mm}\begin{equation*}
+m(t)=\o \cdot [l-n(t)]^{\h} \cdot v(t)^{1-\h}
+\end{equation*} 
+\item $\o>0$: matching efficacy
+\item $\h\in(0,1)$: matching elasticity
+\item Market tightness $\t(t)$ is the ratio of both arguments in matching function:
+\vspace*{-2mm}\begin{equation*}
+\t(t) = \frac{v(t)}{l-n(t)}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching rates}
+\begin{itemize}
+\item Each of the $l-n(t)$ unemployed workers finds a job at a rate
+\begin{equation*}
+f(\t(t)) = \frac{m(t)}{l-n(t)}= \o \t(t)^{1-\h}
+\end{equation*}
+\item Each of the $v(t)$ vacancies is filled at a rate
+\begin{equation*}
+q(\t(t))= \frac{m(t)}{v(t)}= \o  \t(t)^{-\h}
+\end{equation*}
+\item Since these are rates per unit time, they are not restricted to be in $[0,1]$
+\begin{itemize}
+\item Probability to find a job in short time interval $dt$ is $f(\t(t)) dt$
+\item Probability to fill a vacancy in short time interval $dt$ is $q(\t(t)) dt$
+\end{itemize}
+\item $f(0)=0$, $f(\infty) = \infty$, $q(0)=\infty$, $q(\infty) = 0$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Unemployment dynamics}
+\begin{itemize}
+\item Employment relationships evolves according to a differential equation:
+\begin{equation*}
+\dot{n}(t) = f(\t(t)) \bs{l-n(t)} - \l  n(t)
+\end{equation*}
+\item $f(\t(t)) \bs{l-n(t)}$ = number of new relationships at time $t$
+\item $\l n(t)$: number of existing relationships dissolved at time $t$
+\item Unemployment rate $u(t) = 1- n(t)/l$ also follows a differential equation:
+\begin{equation*}
+\dot{u}(t) = \l  \bs{1-u(t)} - f(\t(t)) u(t)
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Beveridge curve}
+\begin{itemize}
+\item Critical point of unemployment law of motion ($u$ such as $\dot{u} = 0$):
+\begin{equation*}
+u = \frac{\l}{\l+f(\t)}
+\end{equation*}
+\item Beveridge curve: negative relationship between unemployment rate and tightness
+\begin{itemize}
+ \item Locus of points such that \# new employment relationships created = \# relationships dissolved at any point in time
+ \item Unemployment rate is stable
+ \end{itemize} 
+\item In practice in the US:  unemployment always on Beveridge curve
+\item Technically: deviation between Beveridgean and actual unemployment rates decays at an exponential rate of 62\% per month \then 90\% deviation vanishes within a quarter
+\item Assumption: unemployment rate is always on Beveridge curve
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Unemployment: always on Beveridge curve (\href{https://pascalmichaillat.org/9/}{Michaillat, Saez 2021})}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=1]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Accounting for unemployment dynamics does not add much descriptive power
+	\begin{itemize}
+	\item Because US labor market flows are so large 
+	\item Convergence to Beveridge curve is very fast
+	\end{itemize}
+	\item Using Beveridge curve instead of differential equation eliminates a state variables ($u$)
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Constructing the AS curve}
+\begin{itemize}	
+\item AS curve gives the number of services sold at tightness $\t$ given that unemployment is on the Beveridge curve:
+\begin{equation*}
+y^s(\t) = [1-u(\t)]\cdot al  = \bs{1-\frac{\l}{\l+f(\t)}}\cdot al = \frac{f(\t)}{\l+f(\t)}\cdot al
+\end{equation*}
+\item Properties of the AS are determined by $f(\t)$:
+\begin{itemize}
+\item $y^s(0) = 0$
+\item $\odx{y^s}{\t}>0$
+\item $d^2 y^s/d\t^2 < 0$
+\item $\lim_{\t\to \infty} y^s(\t) = al$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Plotting the AS curve}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=3]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Diagram features tightness $\t$ on y-axis, not price $p$ or inflation $\pi$
+	\item Tightness is the central variable of the model:
+	\begin{itemize}
+	\item Determines all variables
+	\item Responds to shocks
+	\end{itemize}
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\heading{Consumption and saving by households}
+\end{frame}
+	
+\begin{frame}
+\frametitle{Recruiting cost}
+\begin{itemize}
+\item Each of $v(t)$ vacancy requires $\k>0$ recruiters per unit of time
+\begin{itemize}
+\item Recruiters reading applications, interviewing candidates, and so on
+\end{itemize}
+\item Output = amount of services that households purchase = $y(t)$
+\item Consumption = amount of services that provide utility = $c(t)< y(t)$
+\item $y(t) - c(t)$ = recruiting services = $\k v(t)$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Computing the recruiting wedge}
+\begin{itemize}
+\item $v$ vacancies give $q(\t) v$ new employment relationships
+\item On Beveridge curve, $q(\t) v$ =  \# relationships that separate at any point in time = $\l n$
+\item Sustaining employment $n$ requires $v = \l n/q(\t)$ vacancies
+\item Vacancies are managed by $\k \l n/q(\t)$ recruiters producing $a \k \l n/q(\t) = \k \l y/q(\t)$ services 
+\item When $y$ services are produced, \# services actually consumed is:
+\begin{equation*}
+c = [1- \frac{\k\l}{q(\t)}] y
+\end{equation*}
+\item Consumption and output are therefore related by
+\begin{equation*}
+y = \bs{1+\tau(\t)} c \quad \text{where}\quad \tau(\t) = \frac{\k  \l}{q(\t)-\k  \l}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of the recruiting wedge}
+\begin{itemize}
+\item Recruiting wedge is:
+\begin{equation*}
+\tau(\t) = \frac{\k  \l}{q(\t)-\k  \l}
+\end{equation*}
+\item (Same as in the static model, except that $\k\l$ replaces $\k$)
+\item $\tau(0)=0$
+\item $\tau(\t)$ is increasing on $[0,\t_{\tau})$, where $\t_{\tau}$ is defined by $q(\t_{\tau}) = \k \l$
+\item $\lim_{\t\to \t_{\tau}} \tau(\t) = + \infty$
+\item When tightness is higher, a larger share of services are devoted to recruiting
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Nominal budget constraint}
+\vspace*{-7mm}\begin{equation*}
+\dot{b}(t)= i(t) b(t) + p(t) \bs{1-u(t)} al  - p(t) \bs{1+\tau(\t(t))}  c(t) - T(t)
+\end{equation*}\vspace*{-7mm}
+\begin{itemize}
+\item $\dot{b}(t)$: change in nominal wealth (bond holdings)
+\item $i(t) b(t)$: interest income on wealth
+\item $p(t) \bs{1-u(t)} al$: labor income
+\item $p(t) \bs{1+\tau(\t(t))}  c(t)$: spending on services
+\begin{itemize}
+\item $p(t)c(t)$: spending on consumption services
+\item $p(t)\tau(\t(t)) c(t)$: spending on recruiting services
+\end{itemize}
+\item $T(t)$: lump-sum tax/transfer that government uses to balance its budget
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Real budget constraint}
+\begin{itemize}
+\item Real stock of bonds: $w(t) = b(t)/p(t)$
+\item Real interest rate: $r(t) = i(t)-\pi(t)$
+\item Growth rates of the real and nominal stocks of bonds are related by:
+\vspace*{-2mm}\begin{equation*}
+\frac{\dot{w}(t)}{w(t)}=\frac{d\ln(w(t))}{dt}=\frac{d\ln(b(t))}{dt}-\frac{d\ln(p(t))}{dt} =\frac{\dot{b}(t)}{b(t)} - \frac{\dot{p}(t)}{p(t)} = \frac{\dot{b}(t)}{b(t)} - \pi(t)
+\end{equation*}
+\item Real stock of bonds evolves according to:
+\vspace*{-2mm}\begin{equation*}
+\dot{w}(t)=\frac{\dot{b}(t)}{p(t)} - \pi(t) \cdot w(t)
+\end{equation*}
+\item Which gives the flow real budget constraint:
+\begin{equation*}
+\dot{w}(t)= r(t) w(t) + \bs{1-u(t)} a l  - \bs{1+\tau(\t(t))}  c(t) - \frac{T(t)}{p(t)}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Utility function}
+\begin{itemize}
+\item Household consumes $c(t)$ services, which provide flow utility
+\vspace*{-2mm}\begin{equation*}
+\frac{\e}{\e-1}  c(t)^{(\e-1)/\e}
+\end{equation*}
+\item $\e>1$: concavity of the utility function
+\item Household's relative real wealth is $w(t)-\bar{w}(t)$
+\begin{itemize}
+\item $w(t)$: real stock of bonds = real wealth
+\item $\bar{w}(t)$: average real wealth across all households
+\end{itemize}
+\item From its relative real wealth, the household enjoys flow utility:
+\vspace*{-2mm}\begin{equation*}
+\s(w(t)-\bar{w}(t))
+\end{equation*}
+\item The function $\s: \R \to \R$ is increasing and strictly concave
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Recent, survey evidence of wealth in utility}
+\includegraphics<1>[scale=\wfig,page=1]{\wpdf}%
+\includegraphics<2>[scale=\wfig,page=2]{\wpdf}%
+\includegraphics<3>[scale=\wfig,page=3]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Wealth in utility improves the Euler equation for consumption/saving}
+\begin{itemize}
+\item People report that saving makes them feel happy and fulfilled
+\begin{itemize}
+\item As important as bequest motive and precautionary saving
+\end{itemize}	
+\item So adding wealth in the utility is realistic
+\item It also leads to better-behaved Euler equation (\href{https://pascalmichaillat.org/11/}{Michaillat, Saez 2021})
+\begin{itemize}
+\item Including better behavior at the zero lower bound
+\end{itemize}
+\item Utility for relative wealth is motivated by two reasons:
+\begin{itemize}
+ \item Wealth as marker of social status
+ \item Simplifies analysis since aggregate relative wealth = 0
+ \end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Household problem}
+\begin{itemize}
+\item Choose time paths for $c(t)$ and $w(t)$ to maximize the discounted sum of flow utilities:
+\begin{equation*}
+\int_{0}^{\infty}e^{-\d t} \bs{\frac{\e}{\e-1}  c(t)^{(\e-1)/\e}+\s(w(t)-\bar{w}(t))}dt
+\end{equation*}
+\item $\d>0$: time discount rate
+\item Subject to the real budget constraint
+\item And subject to a borrowing constraint preventing Ponzi schemes
+\item Takes as given paths of $\t(t)$, $u(t)$, $p(t)$, $i(t)$, $T(t)$, and $\bar{w}(t)$
+\item Takes as given initial real wealth $w(0)$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamiltonian}
+\begin{itemize}
+\item Hamiltonian with control variable $c(t)$, state variable $w(t)$, and costate variable $\g(t)$:
+\begin{align*}
+\Hc(t,c(t),w(t))&= \frac{\e}{\e-1}  c(t)^{(\e-1)/\e}+\s(w(t)-\bar{w}(t)) \\
+&+\g(t) \bs{r(t) w(t) + \bs{1-u(t)} al - \bs{1+\tau(\t(t))} c(t) - \frac{T(t)}{p(t)}}
+\end{align*}
+\item Necessary conditions for an interior solution to the maximization problem:
+\begin{itemize}
+\item $\pdx{\Hc}{c}=0$
+\item $\pdx{\Hc}{w}=\d \g(t) -\dot{\g}(t)$
+\item Appropriate transversality condition
+\end{itemize}
+\item Since the utility function is strictly concave, interior paths of $c(t)$ and $w(t)$ that satisfy these conditions constitute the unique global maximum of the household's problem
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimality conditions}
+\begin{itemize}	
+\item Necessary conditions give:
+\begin{align*}
+c(t)^{-1/\e} &= \g(t) \bs{1+\tau(\t(t))}\\
+\dot{\g}(t)&= \bs{\d - r(t)} \g(t) - \s'(w(t)-\bar{w}(t))
+\end{align*}
+\item Without recruiting cost ($\tau=0$) and no utility from wealth ($\s'=0$), the equations reduce to the standard continuous-time Euler equation: 
+\begin{equation*}
+\frac{\dot{c}(t)}{c(t)} =\e [r(t)-\d]
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Inflation and monetary policy}
+\end{frame}
+
+\begin{frame}
+\frametitle{US inflation $\approx 2\%$ in last 30 years}
+\includegraphics<1>[scale=\wfig,page=4]{\wpdf}%
+\includegraphics<2>[scale=\wfig,page=5]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Monetary policy and inflation (recursive identification, Ramey 2016)}
+\includegraphics[scale=\wfig,page=6]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Monetary policy and inflation (narrative identification, Ramey 2016)}
+\includegraphics[scale=\wfig,page=7]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Price norm: fixed inflation}
+\begin{itemize}
+\item Any model with a matching function needs a price mechanism
+\item We assume that prices grow at a fixed rate of inflation $\pi$
+\begin{itemize}
+\item Interpretation: fixed inflation is a social norm (Hall 2005)
+\item Evolution of prices: $p(t) = e^{\pi t}$
+\end{itemize}
+\item Fixed inflation is realistic:
+\begin{itemize}
+\item Inflation does not respond to unemployment (Stock, Watson 2010, 2019)
+\item Inflation does not respond to monetary policy (Ramey 2016)
+\end{itemize}
+\item Fixed inflation does not create bilaterally inefficiencies: 
+\begin{itemize}
+\item Buyers and sellers are happy to transact at the given price
+\end{itemize}
+\end{itemize}    
+\end{frame}
+
+\begin{frame}
+\frametitle{Monetary policy: interest-rate peg}
+\begin{itemize}
+\item Central bank simply follows an interest-rate peg:
+\begin{equation*}
+i(t) = i
+\end{equation*}
+\item ZLB constraint: $i \geq 0$
+\item Since inflation rate and nominal interest rate are fixed, the real interest rate is fixed:
+\begin{equation*}
+r = i - \pi
+\end{equation*}
+\item  $r<\d$ so the model has a solution
+\item Thanks to wealth in the utility, solution will be unique (``determinate equilibrium'') despite the absence of Taylor rule
+\begin{itemize}
+\item Same is true in a New Keynesian model (\href{https://pascalmichaillat.org/11/}{Michaillat, Saez 2021})
+\end{itemize}	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\heading{Dynamics of the model and aggregate demand}
+\end{frame}
+
+\begin{frame}
+\frametitle{Euler equation}
+\begin{itemize}
+\item Costate variable on budget constraint $\g(t)$ satisfies:
+\begin{equation*}
+\dot{\g}(t) = \bs{\d - r(t)} \g(t) - \s'(w(t)-\bar{w}(t))
+\end{equation*}
+\item But real interest rate is fixed to $r$
+\item All households are the same, so their relative wealth is $0$
+\item So the Euler equation is an autonomous, first-order, linear differential equation:
+\begin{equation*}
+\dot{\g}(t) = \bs{\d - r} \g(t) - \s'(0)
+\end{equation*}
+\item Euler equation admits a unique critical point $\g_0$ (where $\dot{\g}=0$):
+\begin{equation*}
+\g_0 =  \frac{\s'(0)}{\d - r}
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Phase line for Euler equation}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=2]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Costate variable $\g(t)$ is nonpredetermined
+	\item One constant solution: $\g$ jumps to $\g_0$ at time $0$ and remains there
+	\item If $\g$ jumps to another position, it diverges to $-\infty$ or $+\infty$ as $t\to \infty$
+	\item Interior path satisfying optimality conditions \then unique global maximum to household's problem
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal consumption}
+\begin{itemize}
+\item Euler equation does not induce any dynamics because costate variable $\g$ jumps to the critical value $\g_0$ at time $0$
+\item Using constant solution to costate equation, optimality conditions are
+\begin{align*}
+c(t)^{-1/\e} &= \g(t) \bs{1+\tau(\t(t))}\\
+\g(t) & =   \frac{\s'(0)}{\d - r}
+\end{align*}
+\item Consumption at time $t$ is:
+\begin{equation*}
+c(t) = \bs{\frac{\d - r}{\s'(0)}\cdot \frac{1}{1+\tau(\t(t))}}^{\e}
+\end{equation*}
+\item[\then] Consumption is just a function of tightness
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{AD curve}
+\begin{itemize}
+\item AD curve gives output demanded by households when households optimally consume and save over time:
+\begin{equation*}
+y = \bs{\frac{\d - r}{\s'(0)}}^{\e} \cdot \frac{1}{[1+\tau(\t)]^{\e-1}}
+\end{equation*}
+\item Properties of the AD are determined by $\tau(\t)$:
+\begin{itemize}
+\item $y^d(0) = \bs{(\d - r)/\s'(0)}^{\e}$
+\item $\odx{y^d}{\t}>0$
+\item $\lim_{\t\to \t_{\tau}} y^d(\t) = 0$
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Properties of the AD curve}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=4]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Diagram features tightness $\t$ on y-axis, not price $p$ or inflation $\pi$
+	\item Tightness is the central variable of the model:
+	\begin{itemize}
+	\item Determines all variables
+	\item Responds to shocks
+	\end{itemize}
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\heading{Solution of the model}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Solution of the model}
+\begin{itemize}
+\item Tightness $\t$ that solves the model is given by:
+\begin{equation*}
+y^s(\t) = y^d(\t)
+\end{equation*}
+\item Then output can be read from the AS or AD curves
+\item $y^s(\t)$ is increasing from $0$ to $al$ as $\t$ is increasing from 0 to $\infty$
+\item $y^d(\t)$ is decreasing from $\bs{(\d - r)/\s'(0)}^{\e}$ to $0$ as $\t$ is increasing from 0 to $\t_{\tau}$
+\item[\then] Model always admits a unique solution, $\t \in (0,\t_{\tau})$
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Graphical representation of the solution}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=5]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Market diagram with tightness $\t$ on y-axis, not inflation $\pi$
+	\item Intersection of AD and AS curves gives $y$, $\t$ that solve the model
+	\item All other variables can be computed from $\t$
+	\item Model has unemployment: $u(\t)>0$
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Computing aggregate variables from tightness}
+\begin{itemize}
+\item Aggregate output: $y = y^s(\t) = y^d(\t)$
+\item Aggregate consumption: $c = y/[1+\tau(\t)]$
+\item Rate of unemployment = $u(\t)$
+\item Aggregate employment: $n = [1-u(\t)] l = y/a$
+\item Number of recruiters = $(y-c)/a$ = $\tau(\t) \cdot  n /[1+\tau(\t)]$
+\item Aggregate number of vacancies: $v = \l\cdot n/q(\t)$
+\item Inflation $\pi$ is given by pricing norm
+\item Interest rates $i$ and $r = i-\pi$ are set by monetary policy
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Decomposition of unemployment}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=6]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Keynesian unemployment caused by lack of demand
+	\item Frictional unemployment is additional unemployment caused by matching cost ($\k>0$, $\tau>0$)
+	\item Conceptually similar to unemployment decomposition in \href{https://pascalmichaillat.org/1/}{Michaillat (2012)}
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\heading{Comparative statics}
+\end{frame}
+
+\begin{frame}
+\frametitle{AS shocks}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=7]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Change in productivity $a$ or labor force participation $l$
+	\item \al{Negative correlation} between output and tightness
+	\item Movement along the AD curve
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of negative labor-force participation shock}
+\begin{itemize}
+\item Labor force participation $l$ \down
+\item Tightness $\t$ \up
+\item Output $y$ \down
+\item \al{Employment $n = y/a$ \down}
+\item \al{Unemployment rate $u(\t)$ \down}
+\item Shopping wedge $\tau(\t)$ \up
+\item Consumption $c = y/[1+\tau(\t)]$ \down
+\item Rare since unemployment rate and output comove negatively (Okun's law)
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of negative productivity shock}
+\begin{itemize}
+\item Productivity $a$ \down
+\item Tightness $\t$ \up
+\item Output $y$ \down
+\item \al{Unemployment rate $u(\t)$ \down}
+\item \al{Employment $n = (1-u) \cdot l$ \up}
+\item Shopping wedge $\tau(\t)$ \up
+\item Consumption $c = y/[1+\tau(\t)]$ \down
+\item Rare since unemployment rate and output comove negatively (Okun's law)
+\item Consistent with evidence that higher productivity reduces employment (Basu, Fernald, Kimball 2006)
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{AD shocks}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=8]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item Change in desire to marginal utility from wealth $\s'(0)$
+	\item \al{Positive correlation} between output and tightness
+	\item Movement along the AS curve
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Impact of negative AD shock}
+\begin{itemize}
+\item Marginal utility from wealth $\s'(0)$ \down
+\item Tightness $\t$ \down
+\item Output $y$ \down
+\item Employment $n = y/a$ \down
+\item Unemployment rate $u(\t)$ \up
+\item Shopping wedge $\tau(\t)$ \down
+\item Most common shock since unemployment and output comove negatively (Okun's law)
+\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Monetary expansion}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=9]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item $y^d(\t)=\bs{(\d - i +\pi)/\s'(0)}^{\e} \cdot [1+\tau(\t)]^{1-\e}$
+	\item Decrease in $i$ boosts aggregate demand
+	\item Which raises tightness and reduces unemployment
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Range of possible expansions}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=10]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item $y^d(\t)=\bs{(\d - i +\pi)/\s'(0)}^{\e} \cdot [1+\tau(\t)]^{1-\e}$
+	\item Monetary policy can stimulate demand as long as $i\geq 0$
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Monetary policy at zero lower bound}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\nfig,page=11]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item $y^d(\t)=\bs{(\d +\pi)/\s'(0)}^{\e} \cdot [1+\tau(\t)]^{1-\e}$
+	\item Monetary policy is most stimulative when $i = 0$
+	\item Highest tightness, lowest unemployment rate
+	\item All model properties remain the same at ZLB: no strange behavior
+\end{itemize}
+\end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+\heading{Summary}
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary of model properties}
+\begin{table}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lcc}
+Property &  NK model & Slackish model \\
+\toprule
+AD relation & Euler equation & discounted Euler equation \\
+AS relation & Phillips curve  & Beveridge curve \\
+Inflation &  fluctuating & fixed \\
+Unemployment &  zero & fluctuating \\
+ZLB world & topsy-turvy & normal \\
+ZLB duration  & must be short & can be permanent \\
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{frame}
+
+\end{document}

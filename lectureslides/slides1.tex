@@ -1,0 +1,342 @@
+\documentclass[11pt,aspectratio=169,xcolor={dvipsnames},hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation,lecture,math}
+\hypersetup{pdftitle={Accounting for Business Cycles}}
+\newcommand{\npdf}{../figures/figures1.pdf}
+\newcommand{\wpdf}{../figures/widefigures1.pdf}
+\begin{document}
+
+\title{Accounting for Business Cycles}
+\information{Pascal Michaillat}%
+{December 2023}%
+{https://pascalmichaillat.org/z/}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Outline}
+\begin{itemize}
+\item Define business cycles
+\item Define capacity and its utilization
+\item Show that capacity is acyclical
+\item While the utilization of capacity is procyclical 
+\begin{itemize}
+\item[\then] Economic slack is countercyclical
+\end{itemize}
+\item Discuss the cost of economic slack and need for stabilization
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\heading{Definition of business cycles}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definition of business cycles (Burns, Mitchell 1946)}
+\begin{quote}
+A cycle consists of expansions occurring at about the same time in \al{many economic activities}, followed by similarly general recessions, contractions, and revivals which merge into the expansion phase of the next cycle; this sequence of changes is \al{recurrent but not periodic}; in duration business cycles vary from \al{more than one year to ten or twelve years}; they are not divisible into shorter cycles of similar character with amplitudes approximating their own.
+\end{quote}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Industrial production fluctuations (Stock, Watson 1999)}
+\includegraphics<1>[scale=\wfig,page=1]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Real GDP fluctuations (Stock, Watson 1999)}
+\includegraphics<1>[scale=\wfig,page=3]{\wpdf}%
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Consumption fluctuations (Stock, Watson 1999)}
+\includegraphics<1>[scale=\wfig,page=4]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\heading{Business-cycle accounting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simple accounting framework}
+\begin{itemize}	
+\item Production identity:
+\begin{equation*}
+\text{production} = \text{productive capacity} \times \text{utilization}
+\end{equation*}
+\item Expression in terms of $\text{slack} = 1 - \text{utilization}$
+\begin{equation*}
+\text{production} = \text{productive capacity} \times [1 - \text{slack}]
+\end{equation*}
+\item Possible source of business-cycle fluctuations:
+\begin{itemize}
+	\item Fluctuations in productive capacity
+	\item Fluctuations in slack
+	\item Or both
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Source of business-cycle fluctuations in the literature}
+\begin{itemize}
+\item General Disequilibrium model (1970s): fluctuations in slack
+\begin{itemize}
+	\item Markets are not clearing so slack $> 0$
+	\item Fluctuations in slack due to aggregate demand shocks
+\end{itemize}
+\item Real Business-Cycle model (1980s–1990s): fluctuations in capacity
+\begin{itemize}
+	\item Markets are competitive so utilization $= 100\%$
+	\item Fluctuations in capacity due to technology shocks
+\end{itemize}
+\item New Keynesian model (2000s–2010s): fluctuations in capacity
+\begin{itemize}
+	\item Markets are monopolistically competitive so utilization $= 100\%$
+	\item Fluctuations in capacity due to aggregate demand shocks and response of participation
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\heading{Capacity is acyclical}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inputs into productive capacity}
+\begin{itemize}
+\item Capital stock
+\item Labor force: share of the working-age civilian population that wishes to work and is available
+\item Technology
+\item All inputs are combined through production process (production function) 
+\item[\so] Productive capacity
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Capital stock in constant dollars}
+\includegraphics<1>[scale=\wfig,page=7]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Civilian population}
+\includegraphics<1>[scale=\wfig,page=8]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Civilian labor force}
+\includegraphics<1>[scale=\wfig,page=9]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Labor-force participation rate (prime age)}
+\includegraphics<1>[scale=\wfig,page=10]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Labor-force participation rate (men)}
+\includegraphics<1>[scale=\wfig,page=11]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Labor-force participation rate (women)}
+\includegraphics<1>[scale=\wfig,page=12]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Proxies for technology}
+\includegraphics<1>[scale=\wfig,page=13]{\wpdf}%
+\includegraphics<2>[scale=\wfig,page=14]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Technology: difficult to measure but likely acyclical}
+\begin{itemize}
+\item In practice, technology is bound to be unrelated to business cycles
+\begin{itemize}
+	\item Invention process is slow and random
+	\item Diffusion process is slow and random
+	\item Depreciation process (loss of know-how) is slow and random
+\end{itemize}
+\item Total factor productivity (TFP) is procyclical
+\begin{itemize}
+	\item But TFP is a residual, driven almost exclusively by factor utilization
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Capacity utilization \so TFP (Stock, Watson 1999)}
+\includegraphics<1>[scale=\wfig,page=15]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\heading{Slack is countercyclical}
+\end{frame}
+
+\begin{frame}
+\frametitle{Occurrences of slack}
+\begin{itemize}
+	\item Slack on the labor market:
+	\begin{equation*}
+	\text{employment} = (1 - \text{unemployment}) \times \text{labor force}
+	\end{equation*}
+	\item Slack on the product market with production function $f$:
+	\begin{equation*}
+	\text{production} = (1 - \text{idleness}) \times f(\text{technology}, \text{capital}, \text{employment})
+	\end{equation*}
+	\item Two forms of slack
+	\begin{itemize}
+		\item Unemployment: share of labor force that is not employed
+		\item Idleness: share of firms' capacity (based on current capital stock and number of employees) that is not in use 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unemployment rate (Stock, Watson 1999)}
+\includegraphics<1>[scale=\wfig,page=16]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Unemployment rate (\href{https://pascalmichaillat.org/13/}{Michaillat, Saez 2022})}
+\includegraphics[scale=\wfig,page=17]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Other unemployment: 1\% of labor force in grey area}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[scale=\sfig,page=1]{\npdf}%
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+	\item U3 = people wanting to work, available to work, and having searched for a job in past 4 weeks
+	\item U4 = U3 + people people discouraged by lack of jobs
+	\item U5 = U4 + people having searched for job in past year
+\end{itemize}
+\end{column}  
+\end{columns}                    
+\end{frame}
+
+\begin{frame}
+\frametitle{Operating rate and idleness rate}
+\begin{itemize}
+\item Data from \href{https://www.ismworld.org/}{Institute for Supply Management} (ISM)
+\item Semi-annual Economic Forecast: \href{https://www.ismworld.org/supply-management-news-and-reports/reports/semi-annual-economic-forecast/2022/fall/}{Fall 2022 example}
+\item Operating rate = actual production level of firms as a share of their maximum production level given current capital and labor (normal capacity)
+\item (Note that the ISM reports a lot of other interesting statistics on slack and tightness)
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Idleness rate in manufacturing (ISM survey)}
+\includegraphics<1>[scale=\wfig,page=18]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Idleness rate in services (ISM survey)}
+\includegraphics<1>[scale=\wfig,page=19]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\heading{Fluctuations in slack account for business cycles}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fluctuations in GPD and consumption}
+\includegraphics<1>[scale=\wfig,page=20]{\wpdf}%
+\includegraphics<2>[scale=\wfig,page=21]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Fluctuations in slack and GDP}
+\includegraphics<1>[scale=\wfig,page=22]{\wpdf}%
+\includegraphics<2>[scale=\wfig,page=23]{\wpdf}%
+\includegraphics<3>[scale=\wfig,page=24]{\wpdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Recasting the results as Okun's laws}
+\includegraphics<1>[scale=\nfig,page=2]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=3]{\npdf}%
+\includegraphics<3>[scale=\nfig,page=4]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Okun’s law in the United States, 1948–2013 (Ball, Leigh, Loungani 2017)}
+\includegraphics<1>[scale=\wfig,page=25]{\wpdf}%
+\end{frame}
+
+
+\begin{frame}
+\heading{Cost of slack and need for stabilization}
+\end{frame}
+
+\begin{frame}
+\frametitle{Non-monetary cost from unemployment}
+\begin{itemize}
+\item Controlling for income and other personal characteristics, unemployment imposes large costs
+\item Di Tella, MacCulloch, Oswald (2003): ``Recessions create psychic losses that extend beyond the fall in GDP and rise in the number of people unemployed. These losses are large.''
+\begin{itemize}
+	\item US General Social Survey: becoming unemployed is as painful as divorcing or dropping from the top to the bottom income quartile
+	\item Euro-barometer survey: becoming unemployed is as bad as losing \$3,500 of income a year, about 45\% of average per-capita income
+\end{itemize}
+\item Blanchflower, Oswald (2004): becoming unemployed is as bad as losing \$60,000 of income a year, 3 times average yearly per-capita income
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Where do the psychological costs of unemployment come from?}
+\begin{itemize}
+\item Depression, anxiety, and strained personal relations (Eisenberg, Lazarfeld 1938)
+\item Job loss is a traumatic event that reduces self-esteem (Akerlof, Yellen 1985)
+\item Joblessness reduces psychological well-being by creating a feeling that life is not under one's control (Goldsmith, Darity 1992)
+\item The benefits of work that are lost in unemployment include (Jahoda 1981):
+\begin{itemize}
+	\item Time structure on the working day
+	\item Regularly shared experiences and contacts with people outside the nuclear family
+	\item Goals and purposes that transcend their own
+	\item Source of personal status and identity
+	\item Regular activity
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Social value of nonwork from revealed preferences}
+\begin{itemize}
+\item Borgschulte, Martorell (2018): natural experiment using military administrative data
+\begin{itemize}
+\item 420,000 veterans
+\item must choose between reenlisting with various bonuses and moving back home to enter local labor market with various unemployment rates \then can compare how higher unemployment rate affects decisions
+\item nonwork time has low value: home production + recreation = $13\%$--$35\%$ earnings
+\end{itemize}
+\item Mas, Pallais (2019): field experiment in which job applicants choose wage-hour bundles
+\begin{itemize}
+\item 900 subjects
+\item home production + recreation = $58\%$ earnings
+\item subjects are already partially employed \then upper bound on value of nonwork
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cost of business cycles and need for stabilization}
+\begin{itemize}
+\item Slumps lead to elevated slack \then productive capacity is not used \then wasted consumption and welfare
+\item Furthermore, slack in the form of unemployment imposes large, additional social costs
+\item However, some slack is required to maximize welfare \then because excessive tightness also has costs
+\begin{itemize}
+\item Time and effort spent recruiting and hiring
+\item Time and effort spent shopping and buying
+\end{itemize}
+\item Slack should be stabilized to a low, adequate level
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{But current US stabilization remains incomplete (Michaillat, Saez 2022)}
+\includegraphics<1>[scale=\wfig,page=26]{\wpdf}%
+\end{frame}
+
+\end{document}
