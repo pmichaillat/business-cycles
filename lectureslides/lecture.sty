@@ -1,0 +1,21 @@
+% --- Beamer theme ---
+\setbeamertemplate{footline}[frame number]
+
+% --- Headings ---
+\addtobeamertemplate{frametitle}{\vspace*{3mm}}{}
+\renewcommand{\frametitle}[1]{\oldframetitle{\vspace{1mm}\MakeLowercase{#1}}}
+
+% --- Display ---
+
+\newcommand{\wfig}{0.2}
+\newcommand{\nfig}{0.25}
+
+% --- Course information ---
+\renewcommand{\information}[3]{\author[]{#1\vspace{0.5cm}\\#2\vspace{0.5cm}\\\color{mygray}{\small Course material available at \url{#3}}\vspace*{-2cm}}\date[]{}}
+
+
+\AtBeginDocument{\setlength{\belowdisplayskip}{2mm}}
+\AtBeginDocument{\setlength{\abovedisplayskip}{2mm}}
+\AtBeginDocument{\setlength{\belowdisplayshortskip}{2mm}}
+\AtBeginDocument{\setlength{\abovedisplayshortskip}{2mm}}
+

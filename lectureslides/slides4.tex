@@ -1,0 +1,565 @@
+\documentclass[11pt,aspectratio=169,xcolor={dvipsnames},hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation,lecture,math}
+\hypersetup{pdftitle={Taming Business Cycles with Monetary and Fiscal Policy}}
+\newcommand{\npdf}{../figures/figures4.pdf}
+\begin{document}
+
+\title{Taming Business Cycles with Monetary and Fiscal Policy}
+\information{Pascal Michaillat}%
+{December 2023}%
+{https://pascalmichaillat.org/z/}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Outline}
+\begin{itemize}
+\item Develop Beveridgean framework to think about productive efficiency
+\begin{itemize}
+	\item Compute efficient labor market tightness
+	\item Compute efficient unemployment rate
+	\item Based on \href{https://pascalmichaillat.org/9/}{Michaillat, Saez (2021)}
+\end{itemize}
+\item Derive formula for optimal monetary policy
+\begin{itemize}
+\item Based on \href{https://pascalmichaillat.org/7/}{Michaillat, Saez (2022)}
+\end{itemize}
+\item Derive formula for optimal government spending
+\begin{itemize}
+\item Based on \href{https://pascalmichaillat.org/6/}{Michaillat, Saez (2019)}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\heading{Beveridgean framework for productive efficiency}
+\end{frame}
+
+\begin{frame}
+\frametitle{Composition of labor force}
+\begin{itemize}
+\item Share $u$ of labor force is unemployed
+\begin{itemize}
+	\item Home production is fraction $\z\in(0,1)$ for market production
+\end{itemize}
+\item Share $\k\cdot v$ of labor force is employed recruiting
+\begin{itemize}
+	\item $\k$ recruiter per vacancy
+\end{itemize}
+\item Share $1-u-\k v$ of labor force is employed producing
+\item Social welfare is determined by home production + market production:
+\begin{equation*}
+SW \propto 1 - u - \k \cdot v + \z \cdot u = 1 - \k \cdot v - (1-\z) \cdot u 
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Beveridgean model of the economy}
+\begin{itemize}
+\item Maximize social welfare $\Leftrightarrow$ minimize $\k v + (1-\z) u$
+\begin{itemize}
+\item Special case with $\k=1$ and $\z=0$: minimize $u+v$ (\href{https://pascalmichaillat.org/13/}{Michaillat, Saez (2023)})
+\end{itemize}
+\item Of course, cannot set $u = v = 0$
+\item Beveridge curve: $v(u)$
+\begin{itemize}
+\item $v$: vacancy rate
+\item $u$: unemployment rate
+\item $v(u)$: decreasing in $u$, convex
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{US Beveridge curve}
+\includegraphics<1>[scale=\nfig,page=1]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=2]{\npdf}%
+\includegraphics<3>[scale=\nfig,page=3]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Condition for labor-market efficiency}
+\includegraphics<1>[scale=\nfig,page=4]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=5]{\npdf}%
+\includegraphics<3>[scale=\nfig,page=6]{\npdf}%
+\includegraphics<4>[scale=\nfig,page=7]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Tightness gap and unemployment gap}
+\includegraphics<1>[scale=\nfig,page=8]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=9]{\npdf}%
+\includegraphics<3>[scale=\nfig,page=10]{\npdf}%
+\includegraphics<4>[scale=\nfig,page=11]{\npdf}%
+\includegraphics<5>[scale=\nfig,page=12]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Graphical characterization of efficiency}
+\begin{itemize}
+\item Efficiency at tangency point: $v'(u) = MRS_{uv}$
+\item Computing the social marginal rate of substitution:
+\begin{equation*}
+MRS_{uv} = -\frac{\pdx{SW}{u}}{\pdx{SW}{v}} = - \frac{1-\z}{\k}
+\end{equation*}
+\item Efficiency condition:
+\begin{equation*}
+v'(u)  = - \frac{1 - \z}{\k} 
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analytical characterization of efficiency}
+\begin{itemize}
+\item Efficiency $\Leftrightarrow$ minimize $\k v(u) + (1-\z) u$
+\item First-order condition is necessary and sufficient for this convex problem:
+\begin{equation*}
+\k v'(u) + (1-\z) =0 
+\end{equation*}
+\item Efficiency condition:
+\begin{equation*}
+v'(u)  = - \frac{1 - \z}{\k} 
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sufficient-statistic formula for efficient tightness}
+\begin{itemize}
+\item Labor market tightness: $\t = v/u$	
+\item Beveridge elasticity: 
+\begin{equation*}
+\e = -\oe{v}{u} = - \frac{u}{v}\cdot\od{v}{u} = - \frac{v'(u)}{\t}>0
+\end{equation*}
+\item Condition for efficiency:
+\begin{align*}
+v'(u) &= -\frac{1 - \z}{\k}\\
+-\frac{v'(u)}{\t} \cdot\t & =  \frac{1 - \z}{\k}\\
+\t  &=  \frac{1 - \z}{\k \cdot \e}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efficient tightness}
+\begin{itemize}
+\item Formula in sufficient statistics (valid in any Beveridgean model):
+\begin{equation*}
+\al{\t^* = \frac{1 - \z}{\k \cdot \e}}
+\end{equation*}
+\item In the US, in aggregate, $\z \approx 0$, $\k\approx 1$, and $\e\approx 1$ so $\t^*\approx 1$ (\href{https://pascalmichaillat.org/13/}{Michaillat, Saez 2023})
+\begin{itemize}
+\item $\e$: Beveridge elasticity
+\item $\k$: recruiting cost
+\item $\z$: social value of nonwork (does not include benefits and transfers)
+\end{itemize}
+\item But these statistics might take different values in other countries or in specific industries 
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Sufficient-statistic formula for efficient unemployment rate}
+\begin{itemize}
+\item With isoelastic Beveridge curve:
+\begin{align*}
+v &= A \cdot u^{-\e} \\
+\t &= \frac{v}{u} = A \cdot u^{-(\e+1)}\\
+u &= (\t/A)^{-1/(\e+1)}\\
+u^* &= (\t^*/A)^{-1/(\e+1)}
+\end{align*}
+\item $u^*$ obtained from $\t^*$ through Beveridge curve:
+\begin{equation*}
+\frac{u}{u^*} = \bp{\frac{\t}{\t^*}}^{-1/(1+\e)}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efficient unemployment rate}
+\begin{itemize}
+\item Reshuffling the terms in the previous expression gives the efficient unemployment rate:
+\begin{equation*}
+\al{u^* = \bp{\frac{\k \cdot \e}{1-\z}\cdot v\cdot u^{\e}}^{1/(1+\e)}}
+\end{equation*}
+\item In the US, in aggregate, $\z \approx 0$, $\k\approx 1$, and $\e\approx 1$ so $u^*\approx \sqrt{uv}$ (\href{https://pascalmichaillat.org/13/}{Michaillat, Saez 2023})
+\item Taking logs in the previous expression, we can also link log unemployment and log tightness gaps, which is useful to switch between unemployment and tightness:
+\begin{equation*}
+\log(u) - \log(u^*) = -\frac{1}{1+\e} \cdot [\log(\t) - \log(\t^*)]
+\end{equation*}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Matching models are Beveridgean models}
+\begin{itemize}
+\item Unemployment is a function of tightness when flows are balanced:
+\begin{equation*}
+u(\t) = \frac{\l}{\l + f(\t)}
+\end{equation*}
+\item We can express relationship as a Beveridge curve:
+\begin{align*}
+u & = \frac{\l}{\l + \o\cdot \t^{1-\h}}\\
+\l & = \l \cdot u+ \o\cdot \frac{v^{1-\h}}{u^{1-\h}}\cdot u\\
+\l \cdot(1-u) & = \o\cdot v^{1-\h} \cdot u^{\h}
+\end{align*}
+\item This yields the Beveridge curve---a negative relationship between $v$ and $u$:
+\begin{equation*}
+\al{v(u) = \bs{\frac{\l \cdot (1-u)}{\o \cdot u^{\h}}}^{1/(1-\h)}}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Beveridge elasticity in matching models}
+\begin{itemize}
+\item Beveridge elasticity is elasticity of vacancy with respect to unemployment along the Beveridge curve:
+\begin{align*}
+\e & = -\oe{v}{u} = -\frac{1}{1-\h}\cdot \bs{\oe{\l \cdot (1-u)}{u}- \h}\\
+\e &= \frac{1}{1-\h}\cdot \bs{ \h - \oe{1-u}{u}}\\
+\e &= \frac{1}{1-\h}\bs{\h+ \frac{u}{1-u}}
+\end{align*}
+\item Since $u/(1-u)$ is small, because $u$ is small, $\e$ is almost constant:
+\begin{equation*}
+\e \approx \frac{\h}{1-\h}
+\end{equation*}
+\item $\e \approx 1$ when $\h = 0.5$, which is a standard calibration (Petrongolo, Pissarides 2001)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\heading{Optimal monetary policy in dynamic business-cycle model}
+\end{frame}
+
+\begin{frame}
+\frametitle{Response to excessive tightness}
+\includegraphics<1>[scale=\nfig,page=13]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=14]{\npdf}%
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Response to insufficient tightness}
+\includegraphics<1>[scale=\nfig,page=15]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=16]{\npdf}%
+\includegraphics<3>[scale=\nfig,page=17]{\npdf}%
+\end{frame}
+
+
+\begin{frame}
+\frametitle{ZLB constraint}
+\includegraphics<1>[scale=\nfig,page=18]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=19]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Wealth tax undoes ZLB}
+\includegraphics<1>[scale=\nfig,page=20]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\heading{Sufficient-statistic formula for optimal monetary policy}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal monetary policy formula}
+\begin{itemize}
+\item Unemployment rate is function $u(i)$ of interest rate	
+\item Linear expansion of $u(i)$ around suboptimal $\bs{i,u}$, assessed at efficient $\bs{i^*,u^*}$:
+\begin{equation*}
+u^* \approx u + \od{u}{i} \cdot (i^* - i)
+\end{equation*}
+\item Reshuffling terms yields sufficient-statistic formula:
+\begin{equation*}
+i - i^* \approx  \frac{u-u^*}{du/di}
+\end{equation*}
+\item Two sufficient statistics required:
+\begin{itemize}
+\item Unemployment gap: $u-u^*$
+\item Monetary multiplier: $du/di$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Monetary multiplier in the US:  $du/di \approx 0.5$}
+\begin{table}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lcc}
+Study &   $du/di$ & Method \\
+\toprule
+Bernanke, Blinder (1992) & $0.6$ & VAR  \\
+Leeper, Sims, Zha (1996) & $0.1$ & VAR \\
+Christiano, Eichenbaum, Evans (1996) &  $0.1$ & VAR \\
+Romer, Romer (2003)  &  $0.9$ & narrative \\
+Bernanke, Boivin, Eliasz (2005) &  $0.2$ & FAVAR\\
+Coibion (2012)  &  $0.5$ & narrative \& VAR \\
+\midrule	
+Median  &  $0.5$ &  \\
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Practical rule for monetary policy}
+\begin{itemize}
+\item Using US evidence on the monetary multiplier, optimal monetary policy becomes:
+\begin{equation*}
+i - i^* \approx  \frac{u-u^*}{0.5} = 2 \times (u-u^*)
+\end{equation*}
+\item[\then] Fed should reduce interest rate by 2 percentage points for each positive percentage point of unemployment gap
+\item[\then] Fed should raise interest rate by 2 percentage points for each negative percentage point of unemployment gap
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Response of Fed to unemployment rate (Bernanke, Blinder 1992)}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\includegraphics[scale=\nfig,page=21]{\npdf}%
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}
+	\item Fed funds rate (FFR) drops by 0.28pp when unemployment increases by 0.18pp
+	\item Since $u^*$ is very stable, FFR drops by 0.28pp when unemployment gap increases by $\approx 0.18$pp
+	\item FFR drops by $0.28/0.18 = 1.6$pp when unemployment gap increases by 1pp
+	\item Close to the 2pp response suggested by optimal formula
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Response of Fed during pandemic (\href{https://pascalmichaillat.org/13/}{Michaillat, Saez 2023})}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\includegraphics[scale=\nfig,page=22]{\npdf}%
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{itemize}
+	\item FFR should drops by $6.3 \times 2 = 12.6$pp at peak of recessions \then ZLB
+	\item FFR should have started to increase in 2021Q2, when unemployment gap turned negative
+	\item FFR increased by $5.25$pp, so we can expect unemployment to increase by $5.25\times 0.5 = 2.6$pp \then unemployment gap likely to turn positive
+	\item Lag of 1–1.5 years for full effect
+\end{itemize}
+\end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\heading{Sufficient-statistic formula for optimal government spending}
+\end{frame}
+
+\begin{frame}
+\frametitle{Government's problem}
+\begin{itemize}
+\item Households' flow utility over public and private employment: $\Uc(c,g)$
+\item To simplify: set up from the paper on $u^* = \sqrt{uv}$
+\begin{itemize}
+\item No home production, one recruiter per vacancy 
+\end{itemize}
+\item Public expenditure is financed by a lump-sum tax to maintain a balanced budget
+\item Private producers: $c = 1 - u - v - g$
+\item First constraint: Beveridge curve $v(u)$
+\item Second constraint: public spending affects unemployment $u(g)$
+\item Given $v(u)$ and $u(g)$, the government chooses $g$ to maximize 
+\begin{equation*}
+\Uc(1 - [u(g) + v(u(g))] - g,g)
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Correcting the Samuelson formula}
+\begin{itemize}
+\item First-order condition of government's problem is
+\begin{align*}
+0 &=\pd{\Uc}{g} - \pd{\Uc}{c} - \pd{\Uc}{c}\cdot u'(g) \cdot\bs{1 + v'(u)}\\
+1 &=\frac{\pdx{\Uc}{g}}{\pdx{\Uc}{c}} - u'(g) \cdot\bs{1 + v'(u)}
+\end{align*}
+\item Optimal public expenditure satisfies
+\begin{equation*}
+\underbrace{1 = MRS_{gc}}_{\text{Samuelson formula}} + \quad \al{\underbrace{[1 + v'(u)] \cdot [-u'(g)]}_{\text{correction}}}
+\end{equation*}
+\item $MRS_{gc} = [\pdx{\Uc}{g}]/[\pdx{\Uc}{c}]$: marginal rate of substitution between public and private consumption, decreasing in $g/c$
+\item $[1 + v'(u)] \cdot [-u'(g)]$: correction to the Samuelson formula in presence of unemployment
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Interpretation of the corrected Samuelson formula}
+\begin{equation*}
+\underbrace{1 = MRS_{gc}}_{\text{Samuelson formula}} + \quad \underbrace{[1 + v'(u)] \cdot [-u'(g)]}_{\text{correction}}
+\end{equation*}
+\begin{itemize}
+\item $MRS_{gc}$: $1$ when public goods $g$ and private goods $c$ are equally valuable, decreasing in $g/c$
+\item $1 + v'(u)$: slope of $u+v(u)$, which is minimized at efficiency
+\begin{itemize}
+\item $1 + v'(u) < 0$ if the economy is inefficiently tight ($u<u^*$) 
+\item $1 + v'(u) = 0$ if the economy is efficient ($u = u^*$) 
+\item $1 + v'(u) > 0$ if the economy is inefficiently slack ($u>u^*$)
+\end{itemize}
+\item $-u'(g) = -du/dg = m$: unemployment multiplier, giving the reduction in \# unemployed workers with 1 extra public worker
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Departures from Samuelson rule}
+\begin{table}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lccc}
+& \multicolumn{3}{c}{Multiplier} \\ 
+\cmidrule{2-4}
+State of economy & $-u'(g)<0$ & $-u'(g) = 0$ & $-u'(g) > 0$\\
+\toprule
+$1 + v'(u)>0$  & $\alr{MRS_{gc}>1}$  & $\alb{MRS_{gc}=1}$ & $\alg{MRS_{gc}<1}$ \\
+$1 + v'(u)=0$ & $\alb{MRS_{gc}=1}$ & $\alb{MRS_{gc}=1}$  & $\alb{MRS_{gc}=1}$ \\ 
+$1 + v'(u)<0$ & $\alg{MRS_{gc}<1}$ & $\alb{MRS_{gc}=1}$ & $\alr{MRS_{gc}>1}$ \\ 
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Departure of optimal spending $g/c$ from Samuelson spending $(g/c)^*$}
+\begin{table}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lccc}
+& \multicolumn{3}{c}{Multiplier} \\ 
+\cmidrule{2-4}
+State of economy & $m<0$ & $m = 0$ & $m > 0$\\
+\toprule
+$u>u^{*}$  & $\alr{g/c<(g/c)^{*}}$  & $\alb{g/c=(g/c)^{*}}$ & $\alg{g/c>(g/c)^{*}}$ \\
+$u=u^{*}$ & $\alb{g/c=(g/c)^{*}}$ & $\alb{g/c=(g/c)^{*}}$  & $\alb{g/c=(g/c)^{*}}$ \\ 
+$u<u^{*}$ & $\alg{g/c>(g/c)^{*}}$ & $\alb{g/c=(g/c)^{*}}$ & $\alr{g/c<(g/c)^{*}}$ \\ 
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Interpretation of departure from Samuelson spending}
+\begin{itemize}
+\item Correction to the Samuelson formula appears due to effect of public expenditure on welfare through unemployment
+\item Assume that public employment reduces unemployment ($ m> 0$) and the labor market is inefficiently slack ($u>u^*$)
+\begin{itemize}
+\item Then an increase in public employment shifts employment from the private to public sector (shift in the composition of the pie, as in Samuelson)
+\item But it also increases the number of producers and therefore the total amount of production (increase in the size of the pie, absent from Samuelson)
+\item This extra positive effect from public employment explains why the corrected formula recommends more public employment than Samuelson ($g/c > (g/c^*)$, or $MRS_gc<1$)
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Explicit sufficient-statistic formula}
+\begin{itemize}
+\item Above formula only implicitly defines the optimal amount of public spending relative to private spending, $g/c$
+\item Can rework the formula to express optimal $g/c$ as a function of fixed statistics:
+\begin{equation*}
+\frac{g/c-(g/c)^{*}}{(g/c)^{*}}\approx \frac{z_0\xi m}{1+  z_1 z_0 \xi m^{2}} \cdot \frac{u_{0}-u^{*}}{u^{*}}
+\end{equation*}
+\item Resulting unemployment $u-u^*$ is smaller than $u_0-u^*$ but positive:
+\begin{equation*}
+u-u^{*} \approx \frac{u_{0}-u^{*}}{1+ z_1 z_0 \xi m^{2}}>0
+\end{equation*}
+\item $u_0$: initial, inefficient unemployment rate
+\item $\xi$: elasticity of substitution between public and private goods
+\item $z_0$, $z_1$: constant of the parameters
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Illustration: US Great Recession \href{https://pascalmichaillat.org/6/}{(Michaillat, Saez 2019)} }
+\begin{itemize}
+\item Starting point: winter 2008--2009	
+\item Unemployment $=6\%$ and public spending $=16.5\%$ of GDP
+\begin{itemize}
+	\item For illustration: we take these values as efficient so $u^* = 6\%$ and $(g/c)^* = 16.5\%$
+\end{itemize}
+\item Unemployment is forecast to increase to $9\%$
+\begin{itemize}
+	\item Initial unemployment gap $u_0 - u^*= 9\% - 6\% = 3\%$
+\end{itemize}
+\item We compute optimal stimulus for various unemployment multipliers $m$
+\begin{itemize}
+\item $\xi$, $z_0$, $z_1$: calibrated to US values
+\end{itemize}
+\item The resulting, optimal unemployment gap $u-u^*$ will be smaller than $u_0-u^*$ but positive
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal stimulus spending (\% of GDP): small multiplier}
+\includegraphics<1>[scale=\nfig,page=23]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal stimulus spending (\% of GDP): medium multiplier}
+\includegraphics<1>[scale=\nfig,page=24]{\npdf}%
+\includegraphics<2>[scale=\nfig,page=25]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal stimulus spending (\% of GDP): large multiplier}
+\includegraphics[scale=\nfig,page=26]{\npdf}%
+\end{frame}
+
+\begin{frame}
+\heading{Summary}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unemployment gap in the United States}
+\begin{itemize}
+\item Socially efficient unemployment rate $u^*$ \& unemployment gap $u-u^*$ are determined by 3 sufficient statistics
+\begin{itemize}
+\item Elasticity of Beveridge curve
+\item Social cost of unemployment
+\item Cost of recruiting
+\end{itemize} 
+\item In the United States, 1951--2019:
+\begin{itemize}
+\item $u^*$ averages $4.3\%$ \then $u-u^*$ averages $1.4$pp
+\item $3.0\% < u^*  < 5.4\%$ \then $u-u^*$ is countercyclical
+\item[\then] \al{Labor market is inefficient}
+\item[\then] \al{Labor market is inefficiently slack in slumps}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implications for policy design}
+\begin{itemize}
+\item Optimal nominal interest rate is procyclical
+\begin{itemize}
+\item Optimal for monetary policy to eliminate the unemployment gap
+\item Unemployment \down when interest rate \down
+\end{itemize}
+\item Optimal government spending is countercyclical
+\begin{itemize}
+\item Optimal for government spending to reduce---not eliminate---the unemployment gap
+\item Unemployment \down when spending \up
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Further implications for policy design}
+\begin{itemize}
+\item Optimal unemployment insurance is countercyclical \href{https://pascalmichaillat.org/4/}{(Landais, Michaillat, Saez 2018)}
+\begin{itemize}
+\item US tightness gap is procyclical	
+\item Optimal for unemployment insurance to reduce---not eliminate---the tightness gap
+\item Tightness \up when unemployment insurance \up
+\end{itemize}
+\item Optimal immigration policy is procyclical \href{https://pascalmichaillat.org/14/}{(Michaillat 2023)}
+\begin{itemize}
+\item Increase in immigration improves welfare when the labor market is inefficiently tight, and reduces welfare when labor market is inefficiently slack
+\item Because immigration reduces labor market tightness
+\end{itemize}
+\end{itemize}	
+\end{frame}
+
+
+\end{document}
