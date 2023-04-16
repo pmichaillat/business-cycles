@@ -21,7 +21,7 @@ This minicourse is about business cycles:
 ## Portal content
 
 + `syllabus.pdf` – Syllabus for the April 2023 instance of the minicourse at CAFRAL
-+ [Discussion forum](https://github.com/pmichaillat/economic-slack/discussions) – To get you help quickly and efficiently, and to stay in touch once the course is over
++ [Discussion forum](https://github.com/pmichaillat/business-cycles/discussions) – To get you help quickly and efficiently, and to stay in touch once the course is over
 
 ## License
 
