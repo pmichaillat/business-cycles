@@ -1,10 +1,10 @@
-# Business Cycles and How to Tame Them: Course Portal
+# Business Cycles and How to Tame Them: Portal
 
-This repository is the course portal for the April 2023 instance of Business Cycles and How to Tame Them at CAFRAL, Reserve Bank of India. This minicourse is taught by [Pascal Michaillat](https://pascalmichaillat.org/). The portal contains the syllabus, provides a discussion forum, and hosts other course resources.
+This repository is the portal for the minicourse "Business Cycles and How to Tame Them" taught by [Pascal Michaillat](https://pascalmichaillat.org/) at CAFRAL, Reserve Bank of India, in April 2023. The portal contains the syllabus, provides a discussion forum, and hosts other course resources.
 
 ## Course webpage
 
-The course is hosted at https://pascalmichaillat.org/c5/.
+The course material is hosted at https://pascalmichaillat.org/c5/.
 
 ## Course overview
 
