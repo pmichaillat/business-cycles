@@ -9,8 +9,8 @@ The course material is hosted at https://pascalmichaillat.org/c5/.
 ## Portal content
 
 + [Syllabus for minicourse](https://github.com/pmichaillat/business-cycles/blob/main/syllabus.pdf)
-+ [Discussion forum](https://github.com/pmichaillat/business-cycles/discussions) – To get you help quickly and efficiently, and to stay in touch once the course is over
-+ `cafral` folder – Resources from a previous instance of the course
++ [Discussion forum](https://github.com/pmichaillat/business-cycles/discussions) – To get you help quickly and to stay in touch
++ Resources from a previous instance of the course
 
 ## License
 
