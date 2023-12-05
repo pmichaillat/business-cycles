@@ -1,6 +1,6 @@
 # Business Cycles and How to Tame Them: Portal
 
-This repository is the portal for the minicourse "Business Cycles and How to Tame Them" taught by [Pascal Michaillat](https://pascalmichaillat.org/) at CAFRAL, Reserve Bank of India, in April 2023. The portal contains the syllabus, provides a discussion forum, and hosts other course resources.
+This repository is the portal for the minicourse "Business Cycles and How to Tame Them" taught by [Pascal Michaillat](https://pascalmichaillat.org/) at the Bank of Italy in December 2023. The portal contains the syllabus, provides a discussion forum, and hosts other course resources.
 
 ## Course webpage
 
@@ -20,9 +20,9 @@ This minicourse is about business cycles:
 
 ## Portal content
 
-+ `syllabus.pdf` – Syllabus for the April 2023 instance of the minicourse at CAFRAL
-+ `researchideas.pdf` – Possible research topics on unemployment and slack
++ [Syllabus for minicourse](https://github.com/pmichaillat/business-cycles/blob/main/syllabus.pdf)
 + [Discussion forum](https://github.com/pmichaillat/business-cycles/discussions) – To get you help quickly and efficiently, and to stay in touch once the course is over
++ `cafral` folder – Resources from a previous instance of the course
 
 ## License
 
