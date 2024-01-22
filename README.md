@@ -15,7 +15,7 @@ The source files to the lecture slides are placed in the `lectureslides` folder.
 + `slides3.tex`, `slides3.pdf` – Slackish Business-Cycle Model: Dynamic Version
 + `slides4.tex`, `slides4.pdf` – Taming Business Cycles with Monetary and Fiscal Policy
 
-The `lectureslides`folder also contain the LaTeX style files used to format the lecture slides:
+The `lectureslides` folder also contains the LaTeX style files used to format the lecture slides:
 
 + `presentation.sty` – [Commands to format academic presentations](https://github.com/pmichaillat/latex-presentation) 
 + `lecture.sty` – Slight modification of `presentation.sty` for teaching material
@@ -36,4 +36,3 @@ The source files to the figures inserted in the lecture slides are placed in the
 ## License
 
 The content of this repository was created by Pascal Michaillat and is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
-
