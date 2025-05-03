@@ -4,7 +4,7 @@ This repository contains the source files of the minicourse "Business Cycles and
 
 ## Course webpage
 
-The course material is hosted at https://pascalmichaillat.org/c5/.
+The course material is hosted at https://pascalmichaillat.org/z/.
 
 ## Lecture slides
 
